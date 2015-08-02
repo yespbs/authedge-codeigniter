@@ -22,6 +22,8 @@ AuthEdge.controller('AuthController', ['$scope', '$http', '$location', function(
 		then(function(response) {
 		    // this callback will be called asynchronously
 		    // when the response is available
+
+		    $location.path('/dashboard').replace();
 		}, function(response) {
 		    // called asynchronously if an error occurs
 		    // or server returns response with an error status.
