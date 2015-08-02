@@ -1,50 +1,46 @@
 var AuthEdge = angular.module('AuthEdge', ['ngRoute']);
 
+// controllers
+AuthEdge.controller('AuthController', 'AuthController');
+AuthEdge.controller('DashboardController', 'DashboardController');
 
-AuthEdge.controller('AuthController', function( $scope ){
-	$scope.url = '/api/login';
-
-	/*login: function(){
-
-	}*/
-});
-
+// routes
 AuthEdge.config( function( $routeProvider ){
 	$routeProvider
 	.when('/',
 		{
 			controller: 'AuthController',
-			templateUrl: 'assets/html/login.html'
+			templateUrl: 'app/html/login.html'
 		}
 	)
 	.when('/login',
 		{
 			controller: 'AuthController',
-			templateUrl: 'assets/html/login.html'
+			templateUrl: 'app/html/login.html'
 		}
 	)
 	.when('/forgotpass',
 		{
 			controller: 'AuthController',
-			templateUrl: 'assets/html/forgotpass.html'
+			templateUrl: 'app/html/forgotpass.html'
 		}
 	)
 	.when('/resetpass',
 		{
 			controller: 'AuthController',
-			templateUrl: 'assets/html/resetpass.html'
+			templateUrl: 'app/html/resetpass.html'
 		}
 	)
 	.when('/signup',
 		{
 			controller: 'AuthController',
-			templateUrl: 'assets/html/signup.html'
+			templateUrl: 'app/html/signup.html'
 		}
 	)
 	.when('/dashboard',
 		{
 			controller: 'AuthController',
-			templateUrl: 'assets/html/dashboard.html'
+			templateUrl: 'app/html/dashboard.html'
 		}
 	)
 	.otherwise( {redirectTo: '/'} );
