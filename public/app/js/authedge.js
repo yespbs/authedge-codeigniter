@@ -19,7 +19,7 @@ AuthEdge.controller('AuthController', ['$scope', '$http', '$location', function(
       //  alert(  );
         //
         // Simple POST request example (passing data) :
-		$http.post( $location.absUrl().replace('#','api'), {email:email, password: password, remember: remember}).
+		$http.post( $location.absUrl().replace('#','api/auth'), {email:email, password: password, remember: remember}).
 		  then(function(response) {
 		    // this callback will be called asynchronously
 		    // when the response is available
