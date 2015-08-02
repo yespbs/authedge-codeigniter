@@ -1,19 +1,19 @@
-<div class="card card-container">
+<div class="card card-container" ng-controller="AuthController">
     <img id="profile-img" class="profile-img-card" src="app/img/avatar_2x.png" />
     <p id="profile-name" class="profile-name-card"></p>
     <form class="form-signin">
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="email" ng-model="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="password" ng-model="password" id="inputPassword" class="form-control" placeholder="Password" required>
         <div id="remember" class="checkbox">
             <label>
-                <input type="checkbox" value="remember-me"> Remember me
+                <input type="checkbox" ng-model="remember" value="1"> Remember me
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block btn-signin" type="button" data-ng-click="login()">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block btn-signin" type="button" ng-click="login(email, password, remember)">Sign in</button>
     </form>
     <!-- /form -->
     <a href="#/forgotpass" class="forgot-password">Forgot the password?</a>
     <div style="border-top: 1px solid#ccc; padding-top:5px; font-size:85%; margin-top: 15px;">Don't have an account!
-        <a href="#/signup" onClick="">Sign Up Here</a>
+        <a href="#/signup">Sign Up Here</a>
     </div>
 </div>

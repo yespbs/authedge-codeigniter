@@ -1,8 +1,22 @@
 var AuthEdge = angular.module('AuthEdge', ['ngRoute']);
 
 // controllers
-AuthEdge.controller('AuthController', 'AuthController');
-AuthEdge.controller('DashboardController', 'DashboardController');
+//AuthEdge.controller('AuthController', 'AuthController');
+//AuthEdge.controller('DashboardController', 'DashboardController');
+
+AuthEdge.controller('AuthController', ['$scope', function( $scope ){
+	$scope.email    = null;
+    $scope.password = null;
+    $scope.remember = 0;
+
+    $scope.login = function( email, password, remember ) {
+        $scope.email = email;
+        $scope.password = password;
+        $scope.remember = remember;
+
+        alert( $scope.email )
+    };
+}]);
 
 // routes
 AuthEdge.config( function( $routeProvider ){
