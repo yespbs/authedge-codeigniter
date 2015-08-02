@@ -17,6 +17,12 @@ AuthEdge.config( function( $routeProvider ){
 			templateUrl: 'assets/html/login.html'
 		}
 	)
+	.when('/login',
+		{
+			controller: 'AuthController',
+			templateUrl: 'assets/html/login.html'
+		}
+	)
 	.when('/forgotpass',
 		{
 			controller: 'AuthController',
