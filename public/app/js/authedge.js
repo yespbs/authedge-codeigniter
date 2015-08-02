@@ -4,7 +4,7 @@ var AuthEdge = angular.module('AuthEdge', ['ngRoute']);
 //AuthEdge.controller('AuthController', 'AuthController');
 //AuthEdge.controller('DashboardController', 'DashboardController');
 
-AuthEdge.controller('AuthController', ['$scope', function( $scope ){
+AuthEdge.controller('AuthController', ['$scope', '$http', '$location', function( $scope, $http, $location ){
 	$scope.email    = null;
     $scope.password = null;
     $scope.remember = 0;
@@ -14,7 +14,20 @@ AuthEdge.controller('AuthController', ['$scope', function( $scope ){
         $scope.password = password;
         $scope.remember = remember;
 
-        alert( $scope.email )
+        //alert( $scope.email );
+
+      //  alert(  );
+        //
+        // Simple POST request example (passing data) :
+		$http.post( $location.absUrl().replace('#','api'), {email:email, password: password, remember: remember}).
+		  then(function(response) {
+		    // this callback will be called asynchronously
+		    // when the response is available
+		  }, function(response) {
+		    // called asynchronously if an error occurs
+		    // or server returns response with an error status.
+		  });
+        //
     };
 }]);
 
