@@ -21,7 +21,7 @@ class Auth extends REST_Controller {
 
     public function login_post()
     {
-        $user = ['id' => 1, 'name' => 'Jim', 'email' => 'jim@example.com', 'fact' => 'Developed on CodeIgniter'];
+        $user = ['id' => 1, 'name' => 'Jim', 'email' => 'jim@example.com', 'fact' => 'Developed on CodeIgniter', 'token'=>random_string()];
 
         if (!empty($user))
         {

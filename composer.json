@@ -3,9 +3,11 @@
 	"name" : "codeigniter/framework",
 	"license": "MIT",
 	"require": {
-		"php": ">=5.2.4"
+		"php": ">=5.2.4",
+		"fzaninotto/Faker": "^1.5"
 	},
 	"require-dev": {
-		"mikey179/vfsStream": "1.1.*"
+		"mikey179/vfsStream": "1.1.*",
+		"kenjis/codeigniter-cli": "^0.1.0"
 	}
 }

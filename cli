@@ -1,6 +1,13 @@
 #!/usr/bin/env php
-
 <?php
+/**
+ * Part of Cli for CodeIgniter
+ *
+ * @author     Kenji Suzuki <https://github.com/kenjis>
+ * @license    MIT License
+ * @copyright  2015 Kenji Suzuki
+ * @link       https://github.com/kenjis/codeigniter-cli
+ */
 
 $path = __DIR__;
 chdir($path);
@@ -11,10 +18,10 @@ define('ROOTPATH', __DIR__ . '/');
 require "{$path}/vendor/autoload.php";
 
 // generate CodeIgniter instance
-$ci = require "{$path}/app/console/instance.php";
+$ci = require "{$path}/ci_instance.php";
 
-class_alias('CLI\Command\Command', 'Command');
-class_alias('CLI\Command\Seed',    'Seeder');
+class_alias('Kenjis\CodeIgniter_Cli\Command\Command', 'Command');
+class_alias('Kenjis\CodeIgniter_Cli\Command\Seed',    'Seeder');
 class_alias('Aura\Cli\Help', 'Help');
 
 $kernel = (new \Aura\Project_Kernel\Factory)->newKernel(
