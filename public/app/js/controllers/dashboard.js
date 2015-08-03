@@ -1,10 +1,11 @@
-DashboardController=function( $scope ){
+// DashboardController
+AuthEdge.controller('DashboardController', ['$scope', '$http', '$location', '$cookies', function( $scope, $http, $location, $cookies ){
 
-	$scope.index = function(){
-
-	};
-
-	$scope.widgets = function(){
+	$scope.logout = function(){
 		
-	};
-}
+		$cookies.remove('authToken');
+
+		// redirect
+		$location.path('/login').replace();	
+	}
+}]);	
