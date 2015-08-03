@@ -2,7 +2,7 @@
 AuthEdge.factory("middlewareService", function($cookies, $location){
     return {
         handleAuth: function(){
-        	//alert($cookies.get('authToken'));
+        	// if user not logged in and attempts /dashboard, redirect to /login
             if( $cookies.get('authToken') == undefined ){
             	// redirect
 				$location.path('/login').replace();	
@@ -15,7 +15,7 @@ AuthEdge.factory("middlewareService", function($cookies, $location){
         },
 
         handleGuest: function(){
-        	//alert($cookies.get('authToken'));
+        	// if user logged in and attempts /login, redirect to /dashboard
             if( $cookies.get('authToken') != undefined ){
             	// redirect
 				$location.path('/dashboard').replace();	
