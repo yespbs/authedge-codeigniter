@@ -131,7 +131,7 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-$config['composer_autoload'] = FALSE;
+$config['composer_autoload'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -305,7 +305,7 @@ $config['cache_query_string'] = FALSE;
 | http://codeigniter.com/user_guide/libraries/encryption.html
 |
 */
-$config['encryption_key'] = 'e85GSgqTXMSoyGQOfjCjqvkoX1cQPRgU';
+$config['encryption_key'] = hex2bin('4391d1d01ea2c5ca86ad0c79ceff8d99');
 
 /*
 |--------------------------------------------------------------------------

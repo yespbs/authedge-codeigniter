@@ -35,3 +35,6 @@
 [2015-08-03 19:43:01] NULL.DEBUG: Aura\Cli_Kernel\CliKernel: command: migrate [] []
 [2015-08-03 19:43:01] NULL.DEBUG: Aura\Cli_Kernel\CliKernel: success: migrate [] []
 [2015-08-03 19:43:10] NULL.DEBUG: Aura\Cli_Kernel\CliKernel: command: migrate [] []
+[2015-08-03 19:47:07] NULL.DEBUG: Aura\Cli_Kernel\CliKernel: command: seed [] []
+[2015-08-03 19:47:15] NULL.DEBUG: Aura\Cli_Kernel\CliKernel: command: seed [] []
+[2015-08-03 19:47:15] NULL.DEBUG: Aura\Cli_Kernel\CliKernel: success: seed [] []

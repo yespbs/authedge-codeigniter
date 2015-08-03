@@ -21,11 +21,18 @@ class Auth extends REST_Controller {
 
     public function login_post()
     {
-        $user = ['id' => 1, 'name' => 'Jim', 'email' => 'jim@example.com', 'fact' => 'Developed on CodeIgniter', 'token'=>random_string()];
+        // $user = ['id' => 1, 'name' => 'Jim', 'email' => 'jim@example.com', 'fact' => 'Developed on CodeIgniter', 'token'=>random_string()];
 
-        if (!empty($user))
+        $this->load->model('user_model');
+
+        $email    = $this->post('email');
+        $password = $this->post('password');
+
+        $user = $this->user_model->wherEmail($email);
+
+        if ( $user && $user->password == $password )
         {
-            $this->set_response($user, REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
+            $this->set_response(['id'=>$user->id, 'token'=>random_string()], REST_Controller::HTTP_OK); // OK (200) being the HTTP response code
         }
         else
         {
