@@ -50,43 +50,103 @@ AuthEdge.controller('DashboardController', ['$scope', '$http', '$location', '$co
 	}
 }]);	
 
+AuthEdge.factory("authService", function($cookies, $location){
+    return {
+        handleAuth: function(){
+        	//alert($cookies.get('authToken'));
+            if( $cookies.get('authToken') == undefined ){
+            	// redirect
+				$location.path('/login').replace();	
+				// false
+				return false;
+            }
+
+            // true
+            return true;
+        },
+
+        handleGuest: function(){
+        	//alert($cookies.get('authToken'));
+            if( $cookies.get('authToken') != undefined ){
+            	// redirect
+				$location.path('/dashboard').replace();	
+				// false
+				return false;
+            }
+
+            // true
+            return true;
+        }
+    };
+});
+
 // routes
 AuthEdge.config( function( $routeProvider ){
 	$routeProvider
 	.when('/',
 		{
 			controller: 'AuthController',
-			templateUrl: 'app/html/login.html'
+			templateUrl: 'app/html/login.html',
+			resolve: {
+				guest: function( authService ){
+					return authService.handleGuest();
+				}
+			}
 		}
 	)
 	.when('/login',
 		{
 			controller: 'AuthController',
-			templateUrl: 'app/html/login.html'
+			templateUrl: 'app/html/login.html',
+			resolve: {
+				guest: function( authService ){
+					return authService.handleGuest();
+				}
+			}
 		}
 	)
 	.when('/forgotpass',
 		{
 			controller: 'AuthController',
-			templateUrl: 'app/html/forgotpass.html'
+			templateUrl: 'app/html/forgotpass.html',
+			resolve: {
+				guest: function( authService ){
+					return authService.handleGuest();
+				}
+			}
 		}
 	)
 	.when('/resetpass',
 		{
 			controller: 'AuthController',
-			templateUrl: 'app/html/resetpass.html'
+			templateUrl: 'app/html/resetpass.html',
+			resolve: {
+				guest: function( authService ){
+					return authService.handleGuest();
+				}
+			}
 		}
 	)
 	.when('/signup',
 		{
 			controller: 'AuthController',
-			templateUrl: 'app/html/signup.html'
+			templateUrl: 'app/html/signup.html',
+			resolve: {
+				guest: function( authService ){
+					return authService.handleGuest();
+				}
+			}
 		}
 	)
 	.when('/dashboard',
 		{
 			controller: 'AuthController',
-			templateUrl: 'app/html/dashboard.html'
+			templateUrl: 'app/html/dashboard.html',
+			resolve: {
+				auth: function( authService ){
+					return authService.handleAuth();
+				}
+			}
 		}
 	)
 	.otherwise( {redirectTo: '/'} );
