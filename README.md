@@ -1,2 +1,2 @@
-# authedge-codeigniter
-Codeigniter3.0.4 + AngularJS Authentication
+# Authedge with Codeigniter
+Codeigniter 3.0.4 and AngularJS Authentication
