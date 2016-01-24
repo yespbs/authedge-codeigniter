@@ -171,3 +171,28 @@ DEBUG - 2016-01-24 10:26:34 --> Global POST, GET and COOKIE data sanitized
 DEBUG - 2016-01-24 10:26:34 --> Encryption: Auto-configured driver 'openssl'.
 DEBUG - 2016-01-24 10:26:34 --> Config file loaded: /Users/priyabrata/Documents/Workspace/Web/authedge/codeigniter3/application/config/rest.php
 DEBUG - 2016-01-24 10:26:34 --> Total execution time: 0.0421
+DEBUG - 2016-01-24 12:43:09 --> UTF-8 Support Enabled
+DEBUG - 2016-01-24 12:43:09 --> No URI present. Default controller set.
+DEBUG - 2016-01-24 12:43:09 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-01-24 12:43:09 --> Encryption: Auto-configured driver 'openssl'.
+DEBUG - 2016-01-24 12:43:09 --> Total execution time: 0.1217
+DEBUG - 2016-01-24 12:43:10 --> UTF-8 Support Enabled
+DEBUG - 2016-01-24 12:43:10 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2016-01-24 12:43:10 --> 404 Page Not Found: Assets/js
+DEBUG - 2016-01-24 12:43:10 --> UTF-8 Support Enabled
+DEBUG - 2016-01-24 12:43:10 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2016-01-24 12:43:10 --> 404 Page Not Found: Assets/js
+DEBUG - 2016-01-24 12:43:10 --> UTF-8 Support Enabled
+DEBUG - 2016-01-24 12:43:10 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2016-01-24 12:43:10 --> 404 Page Not Found: Assets/js
+DEBUG - 2016-01-24 12:43:10 --> UTF-8 Support Enabled
+DEBUG - 2016-01-24 12:43:10 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2016-01-24 12:43:10 --> 404 Page Not Found: Assets/js
+DEBUG - 2016-01-24 12:43:10 --> UTF-8 Support Enabled
+DEBUG - 2016-01-24 12:43:10 --> Global POST, GET and COOKIE data sanitized
+ERROR - 2016-01-24 12:43:10 --> 404 Page Not Found: Assets/js
+DEBUG - 2016-01-24 12:43:16 --> UTF-8 Support Enabled
+DEBUG - 2016-01-24 12:43:16 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2016-01-24 12:43:16 --> Encryption: Auto-configured driver 'openssl'.
+DEBUG - 2016-01-24 12:43:16 --> Config file loaded: /Users/priyabrata/Documents/Workspace/Web/authedge/codeigniter3/application/config/rest.php
+DEBUG - 2016-01-24 12:43:16 --> Total execution time: 0.1257
