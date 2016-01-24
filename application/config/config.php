@@ -1,6 +1,79 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+
+/*
+|--------------------------------------------------------------------------
+| Base Domain
+|--------------------------------------------------------------------------
+|
+| Domain to your CodeIgniter root. Typically this will be your base Domain,
+| WITH a trailing slash:
+|
+|	example.com
+|
+*/
+
+$config['base_domain'] = $_SERVER['HTTP_HOST'];
+
+/*
+|--------------------------------------------------------------------------
+| Web Path
+|--------------------------------------------------------------------------
+|
+| Root to your site root. Typically this will be your install path,
+| WITH a trailing slash:
+|
+|	/
+|
+*/
+
+$config['base_uri'] = BASEURI;	
+
+/*
+|--------------------------------------------------------------------------
+| Base Site URL
+|--------------------------------------------------------------------------
+|
+| URL to your CodeIgniter root. Typically this will be your base URL,
+| WITH a trailing slash:
+|
+|	http://example.com/
+|
+| WARNING: You MUST set this value!
+|
+| If it is not set, then CodeIgniter will try guess the protocol and path
+| your installation, but due to security concerns the hostname will be set
+| to $_SERVER['SERVER_ADDR'] if available, or localhost otherwise.
+| The auto-detection mechanism exists only for convenience during
+| development and MUST NOT be used in production!
+|
+| If you need to allow multiple domains, remember that this file is still
+| a PHP script and you can easily do that on your own.
+|
+*/
+// $config['base_url'] = '';
+$allowed_domains = array('yoursite.com', 'sandbox.sologiclay.com', 'localhost');
+$default_domain  = 'sandbox.sologiclay.com';
+
+if (in_array($_SERVER['HTTP_HOST'], $allowed_domains, TRUE))
+{
+        $domain = $_SERVER['HTTP_HOST'];
+}
+else
+{
+        $domain = $default_domain;
+}
+
+if ( ! empty($_SERVER['HTTPS']))
+{
+        $config['base_url'] = 'https://'.$domain . BASEURI;
+}
+else
+{
+        $config['base_url'] = 'http://'.$domain . BASEURI;
+}
+
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -17,7 +90,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = '';
+//$config['base_url'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -131,7 +204,7 @@ $config['subclass_prefix'] = 'MY_';
 | Note: This will NOT disable or override the CodeIgniter-specific
 |	autoloading (application/config/autoload.php)
 */
-$config['composer_autoload'] = TRUE;
+$config['composer_autoload'] = VENDOR_PATH . 'autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -222,7 +295,8 @@ $config['log_threshold'] = 2;
 | application/logs/ directory. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = str_replace('application/','',APPPATH) . 'storage/logs/';
+//$config['log_path'] = str_replace('application/','',APPPATH) . 'storage/logs/';
+$config['log_path'] = STORAGE_PATH . 'logs/';
 
 /*
 |--------------------------------------------------------------------------
@@ -281,7 +355,7 @@ $config['error_views_path'] = '';
 | application/cache/ directory.  Use a full server path with trailing slash.
 |
 */
-$config['cache_path'] = '';
+$config['cache_path'] = STORAGE_PATH .'cache/';
 
 /*
 |--------------------------------------------------------------------------
@@ -356,9 +430,9 @@ $config['encryption_key'] = hex2bin('4391d1d01ea2c5ca86ad0c79ceff8d99');
 |
 */
 $config['sess_driver'] = 'files';
-$config['sess_cookie_name'] = 'ci_session';
+$config['sess_cookie_name'] = 'authedge_session';
 $config['sess_expiration'] = 7200;
-$config['sess_save_path'] = str_replace('application/','',APPPATH) . 'storage/sessions/';
+$config['sess_save_path'] = STORAGE_PATH . 'sessions/';
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
 $config['sess_regenerate_destroy'] = FALSE;
@@ -380,7 +454,7 @@ $config['sess_regenerate_destroy'] = FALSE;
 */
 $config['cookie_prefix']	= '';
 $config['cookie_domain']	= '';
-$config['cookie_path']		= '/';
+$config['cookie_path']		= SITE_COOKIE_PATH;
 $config['cookie_secure']	= FALSE;
 $config['cookie_httponly'] 	= FALSE;
 
